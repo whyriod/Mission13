@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Bowler
+
+<form>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Bowler ID</span>
+        </div>
+        <input disabled asp-for="BowlerID" value="@Model.BowlerID" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+        </div>
+        <input asp-for="BowlerFirstName" value="@Model.BowlerFirstName" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Middle Initial</span>
+        </div>
+        <input asp-for="BowlerMiddleInit" value="@Model.BowlerMiddleInit" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+        </div>
+        <input asp-for="BowlerLastName" value="@Model.BowlerLastName" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Address</span>
+        </div>
+        <input asp-for="BowlerAddress" value="@Model.BowlerAddress" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">City</span>
+        </div>
+        <input asp-for="BowlerCity" value="@Model.BowlerCity" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">State</span>
+        </div>
+        <input asp-for="BowlerState" value="@Model.BowlerState" />
+    </div><br />
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Zip</span>
+        </div>
+        <input asp-for="BowlerZip" value="@Model.BowlerZip" />
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Phone Number</span>
+        </div>
+        <input asp-for="BowlerPhoneNumber" value="@Model.BowlerPhoneNumber" />
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Team</span>
+        </div>
+        <select asp-for="TeamID" type="text">
+            <option value="">Select a Team</option>
+            @foreach (Team t in ViewBag.Team)
+            {
+                <option value="@t.TeamID">@t.TeamName</option>
+            }
+        </select>
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Total Pins</span>
+        </div>
+        <input asp-for="BowlerTotalPins" value="@Model.BowlerTotalPins" />
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Games Bowled</span>
+        </div>
+        <input asp-for="BowlerGamesBowled" value="@Model.BowlerGamesBowled" />
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Current Average</span>
+        </div>
+        <input asp-for="BowlerCurrentAverage" value="@Model.BowlerCurrentAverage" />
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Current HCP</span>
+        </div>
+        <input asp-for="BowlerCurrentHcp" value="@Model.BowlerCurrentHcp" />
+    </div>
+
+</form>
