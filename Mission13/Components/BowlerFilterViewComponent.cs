@@ -22,7 +22,6 @@ namespace Mission13.Components
 
         public IViewComponentResult Invoke()
         {
-
             var types = _repo.Teams
                 .Select(x => x.TeamName)
                 .Distinct()

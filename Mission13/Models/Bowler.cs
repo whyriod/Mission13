@@ -28,7 +28,11 @@ namespace Mission13.Models
         public string BowlerZip { get; set; }
         [MaxLength(14)]
         public string BowlerPhoneNumber { get; set; }
+
+        //Foreign Key
+        [Required(ErrorMessage ="Please select a team")]
         public int TeamID { get; set; }
+        public Team Team { get; set; }
         public int BowlerTotalPins { get; set; }
         public int BowlerGamesBowled { get; set; }
         public short BowlerCurrentAverage { get; set; }
