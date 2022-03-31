@@ -56,11 +56,8 @@ namespace Mission13.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Check how many we found
-                List<Bowler> check = _repo.Bowlers.Where(x => x.BowlerID == b.BowlerID).ToList();
-
-                //None Found
-                if(check.Count < 1)
+                //This is a new record
+                if(b.BowlerID == _repo.Bowlers.Max(x => x.BowlerID))
                 {
                     _repo.CreateBowler(b);
                 }
