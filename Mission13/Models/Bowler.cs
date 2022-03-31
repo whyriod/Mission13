@@ -33,9 +33,5 @@ namespace Mission13.Models
         [Required(ErrorMessage ="Please select a team")]
         public int TeamID { get; set; }
         public Team Team { get; set; }
-        public int BowlerTotalPins { get; set; }
-        public int BowlerGamesBowled { get; set; }
-        public short BowlerCurrentAverage { get; set; }
-        public short BowlerCurrentHcp { get; set; }
     }
 }

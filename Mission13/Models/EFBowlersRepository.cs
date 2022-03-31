@@ -17,27 +17,22 @@ namespace Mission13.Models
         public IQueryable<Team> Teams => _context.Teams;
 
         //Essential bowler functions
-        public void SaveBowler()
-        {
-            _context.SaveChanges();
-        }
-
         public void CreateBowler(Bowler b)
         {
             _context.Add(b);
-            SaveBowler();
+            _context.SaveChanges();
         }
 
         public void DeleteBowler(Bowler b)
         {
-            _context.Bowlers.Remove(b);
-            SaveBowler();
+            _context.Remove(b);
+            _context.SaveChanges();
         }
 
         public void EditBowler(Bowler b)
         {
-            _context.Bowlers.Update(b);
-            SaveBowler();
+            _context.Update(b);
+            _context.SaveChanges();
         }
     }
 }

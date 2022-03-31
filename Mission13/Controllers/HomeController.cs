@@ -20,7 +20,7 @@ namespace Mission13.Controllers
 
         public IActionResult Index(string teamName)
         {
-
+            ViewBag.TeamName = teamName;
             var b = _repo.Bowlers
                     .Where(b => b.Team.TeamName == teamName || teamName == null)
                     .OrderBy(b => b.BowlerFirstName)
